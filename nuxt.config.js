@@ -50,6 +50,25 @@ module.exports = {
       ssr: false
     }
   ],
+  modules: [
+    '@nuxtjs/axios',
+    ['@nuxtjs/google-analytics', {
+      ua: 'UA-122143426-1'
+    }],
+    '@nuxtjs/google-gtag'
+  ],
+  // example config
+  'google-gtag': {
+    id: 'UA-122143426-1', // required
+    config: {
+      // this are the config options for `gtag
+      // check out official docs: https://developers.google.com/analytics/devguides/collection/gtagjs/
+      anonymize_ip: true, // anonymize IP 
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    },
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach(...)
+  },
   axios: {
     // proxyHeaders: false,
     // baseURL: 'https://hsbk.dev3.hellosanta.tw'
