@@ -48,10 +48,23 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
-    ['@nuxtjs/google-analytics', {
-      ua: 'UA-122143426-1'
-    }]
+    // ['@nuxtjs/google-analytics', {
+    //   ua: 'UA-122143426-1'
+    // }]
+    '@nuxtjs/google-gtag'
   ],
+  // example config
+  'google-gtag': {
+    id: 'UA-122143426-1', // required
+    config: {
+      // this are the config options for `gtag
+      // check out official docs: https://developers.google.com/analytics/devguides/collection/gtagjs/
+      anonymize_ip: true, // anonymize IP 
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    },
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach(...)
+  },
   axios: {
     // proxyHeaders: false,
     // baseURL: 'https://hsbk.dev3.hellosanta.tw'
@@ -63,7 +76,9 @@ module.exports = {
   /*
    ** Customize the progress bar color
    */
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#3B8070'
+  },
   /*
    ** Build configuration
    */
@@ -80,7 +95,10 @@ module.exports = {
     /*
      ** Run ESLint on save
      */
-    extend(config, { isDev, isClient }) {
+    extend(config, {
+      isDev,
+      isClient
+    }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -90,7 +108,9 @@ module.exports = {
         })
       }
     },
-    extend(config, { isServer }) {
+    extend(config, {
+      isServer
+    }) {
       if (isServer) {
         config.externals = [
           require('webpack-node-externals')({
