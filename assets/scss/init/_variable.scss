@@ -1,0 +1,31 @@
+// We can use all of the Breakpoint control variables with respond-to as well!
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
+@include add-breakpoint(mobile, (481px));
+@include add-breakpoint(pad, (768px));
+@include add-breakpoint(laptop, (1201px));
+@include add-breakpoint(pc, (1441px));
+
+@include add-breakpoint(footer, (490px));
+
+
+// font
+$base-unit: rem;
+$base-font-size: 16px;
+$base-line-height: 24px;
+$line-height-method: ratio;
+$base-line-height-ratio: 1.5;
+
+$font-size: (
+  xl:   32px,
+  28px: 28px,
+  25px: 25px,
+  l:    24px,
+  20px: 20px,
+  18px: 18px,
+  m:    16px,
+  15px: 15px,
+  14px: 14px,
+  s:    12px,
+);
+

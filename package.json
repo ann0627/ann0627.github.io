@@ -1,0 +1,46 @@
+{
+  "name": "onepage",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "ann.lin@hellosanta.com.tw",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "deploy": "push-dir --dir=dist --branch=master --cleanup",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "nuxt": "^1.4.1",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.14.3",
+    "pug-filters": "^3.1.0",
+    "vue-lodash": "^2.0.0",
+    "vue-scrollto": "^2.11.0",
+    "vue-slick": "^1.1.12"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.3.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.0",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.4.0",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^7.0.3"
+  }
+}

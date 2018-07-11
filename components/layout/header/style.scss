@@ -1,0 +1,58 @@
+// main color
+$color01: #000;
+$color02: #fff;
+$color03: #eee;
+$color04: #C49B66;
+
+// font size
+$fontSz-title: 36px;
+$fontSz-subtitle: 25px;
+$fontSz-text: 16px;
+
+nav {
+    border-bottom: 1px solid rgba(12, 12, 12, 0.04);
+  &.active {
+    background-color: $color02;
+    .logo,
+    .navbar-toggler,
+    .nav-link {
+      color: $color01;
+    }
+    .navbar-nav {
+      text-align: center;
+    }
+  }
+  color: $color02;
+  transition: 0.3s;
+  .logo {
+    font-size: $fontSz-subtitle;
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-toggler {
+    color: $color02;
+    outline: 0;
+  }
+  .nav-item {
+    margin: 15px 5px;
+    color: inherit;
+  }
+  .nav-link {
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.nav-scroll {
+  background: $color02;
+  color: $color01;
+  transition: 0.3s;
+  .navbar-toggler{
+    color: $color01;
+  }
+}
